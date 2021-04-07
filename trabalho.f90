@@ -1,23 +1,38 @@
-program cilindro
-! Calcula a área de um cilindro. -> exclamação = comentários
-!
-! Declara as variáveis e constantes.
-implicit none ! Requer que todas as variáveis sejam declaradas
-integer :: ierr
-real :: raio,altura,area
-real , parameter :: pi = 3.14159
-do
-   ! Pergunta ao usuário o raio e a altura e lê os valores.
-   write (*,*) "Entre com o raio e a altura, 'q' para sair."
-   read (*,*,iostat=ierr) raio,altura
-   !
-   ! Se o raio e a altura não puderam ser lidos da entrada, termina o programa.
-   if (ierr /= 0) stop "finalizando o programa"
-   !
-   ! Calcula a área. O sinal ** significa "eleva a uma potência".
-   area = 2*pi*(raio**2 + raio*altura)
-   !
-   ! Escreve as variáveis de entrada (raio, altura) e a saida (área) na tela.
-   write (*,"(1x,'raio=',f6.2,5x,'altura=',f6.2,5x,'area=',f6.2)") raio,altura,area
-end do
-end program cilindro
+program trabalho
+
+   integer ii, jj, kk
+   common/ijk/ ii, jj, kk
+   real*8  ff
+   character*32 cc
+
+   ii = 2
+   jj = 3
+   kk = 4
+   ff = 9.0567
+   cc = 'Example of a character string'
+
+   write(6,10) ii, ff
+10    format('ii= ',i2,' ff= ',f10.4)
+
+   call abc(ii)
+
+   write(6,20) ii
+20    format('ii= ',i2)
+
+   write(6,30) ii, jj, kk
+
+   call doubleIJK(cc)
+
+   write(6,30) ii, jj, kk
+30    format('ii= ',i2,' jj= ', i2, ' kk= ', i2)
+
+   write(6, 40) cc
+40    format(a32)
+
+   stop
+   end
+
+   subroutine abc(jj)
+   jj = jj * 2
+   return
+   end
