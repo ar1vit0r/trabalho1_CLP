@@ -1,0 +1,2 @@
+# trabalho1_CLP
+Fazer uma aplicação que leia um arquivo que possua 2 ou mais linhas. A primeira linha contém uma string composta apenas por caracteres e digitos, sem espaços em branco ou qualquer outro símbolo, de tamanho máximo 20. A partir da segunda linha, não há limites de caracteres, podendo haver símbolos especiais e espaços em branco. A aplicação deve retornar o número de vezes que a string na primeira linha foi encontrada no restante do arquivo.
